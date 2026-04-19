@@ -3,9 +3,9 @@ name: Publish Medford Mercury
 on:
   schedule:
     # Morning Edition — Mon through Sat, 10:00 UTC = 6:00 AM ET (EDT)
-    - cron: '0 9 * * 1-6'
+    - cron: '58 8 * * 1-6'
     # Sunday Edition — Sunday, 09:00 UTC = 5:00 AM ET (EDT)
-    - cron: '0 9 * * 0'
+    - cron: '58 8 * * 0'
   workflow_dispatch:
     inputs:
       edition_type:
