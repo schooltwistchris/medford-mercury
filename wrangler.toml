@@ -1,0 +1,22 @@
+name       = "medford-mercury"
+main       = "src/worker.js"
+compatibility_date = "2024-01-01"
+
+# ── KV namespace ──────────────────────────────────────────────────────────────
+# After running `wrangler kv namespace create EDITIONS` you'll get an id.
+# Paste it below. For local dev, `preview_id` can be the same value.
+#
+# $ wrangler kv namespace create EDITIONS
+# → { binding = "EDITIONS", id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" }
+
+[[kv_namespaces]]
+binding    = "EDITIONS"
+id         = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# ── Optional: custom domain ───────────────────────────────────────────────────
+# Uncomment and fill in once your domain is added to Cloudflare.
+#
+# [[routes]]
+# pattern = "medfordmercury.com/*"
+# zone_name = "medfordmercury.com"

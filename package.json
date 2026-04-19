@@ -1,0 +1,21 @@
+{
+  "name": "medford-mercury",
+  "version": "1.0.0",
+  "description": "Medford Mercury — daily local news magazine on Cloudflare Pages",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate":        "node scripts/generate.js",
+    "generate:sunday": "node scripts/generate-sunday.js",
+    "deploy":          "node scripts/deploy.js",
+    "publish":         "node scripts/generate.js && node scripts/deploy.js",
+    "publish:sunday":  "node scripts/generate-sunday.js && node scripts/deploy.js",
+    "publish:auto":    "node -e \"const d=new Date();process.exit(d.getDay()===0?0:1)\" && npm run publish:sunday || npm run publish"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

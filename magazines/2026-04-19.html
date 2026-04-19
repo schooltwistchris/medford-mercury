@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medford Mercury — Sunday Edition · April 19, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0e0d0b;
+    --cream: #f5f0e8;
+    --rust: #c84b2f;
+    --midnight: #0a0f1e;
+    --gold: #d4a843;
+    --sage: #3d5a47;
+    --rose: #e8d5d0;
+    --terminal-green: #00ff88;
+    --slate: #2c3e50;
+    --parchment: #ede8d6;
+    --alert-red: #d62b2b;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--cream);
+    border-bottom: 3px solid var(--ink);
+    padding: 32px 60px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: 20px;
+  }
+
+  .masthead-left {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  .masthead-title {
+    text-align: center;
+  }
+
+  .masthead-title .name {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    color: var(--ink);
+  }
+
+  .masthead-title .tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #888;
+    margin-top: 8px;
+  }
+
+  .masthead-right {
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  .masthead-rule {
+    height: 1px;
+    background: var(--ink);
+    margin: 0 60px;
+  }
+
+  .masthead-sub {
+    padding: 6px 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* ─── STORY SPREADS ─── */
+
+  /* 1 · HERO — cream / full bleed */
+  .spread-hero {
+    background: var(--cream);
+    padding: 80px 60px 80px;
+    border-bottom: 3px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .spread-hero::before {
+    content: '01';
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    font-family: 'Fraunces', serif;
+    font-size: 240px;
+    font-weight: 900;
+    color: rgba(14,13,11,0.05);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .spread-hero .kicker {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 20px;
+  }
+  .spread-hero .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    max-width: 820px;
+    margin-bottom: 32px;
+  }
+  .spread-hero .dek {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.55;
+    max-width: 680px;
+    color: #333;
+    margin-bottom: 28px;
+  }
+  .spread-hero .byline {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+  }
+  .spread-hero .why {
+    margin-top: 40px;
+    padding: 24px 32px;
+    background: var(--ink);
+    color: var(--cream);
+    display: inline-block;
+    max-width: 560px;
+  }
+  .spread-hero .why .why-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .spread-hero .why p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* 2 · MIDNIGHT — dark */
+  .spread-midnight {
+    background: var(--midnight);
+    color: #e8e4da;
+    padding: 80px 60px;
+    border-bottom: 3px solid #1a2235;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .spread-midnight .divider {
+    background: rgba(255,255,255,0.12);
+    align-self: stretch;
+  }
+  .spread-midnight .big-numeral {
+    font-family: 'Fraunces', serif;
+    font-size: 180px;
+    font-weight: 900;
+    color: rgba(212,168,67,0.15);
+    line-height: 0.85;
+    margin-bottom: -20px;
+  }
+  .spread-midnight .kicker {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .spread-midnight .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 800;
+    line-height: 1.05;
+    color: #f0ece0;
+    margin-bottom: 28px;
+  }
+  .spread-midnight .dek {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(232,228,218,0.75);
+    margin-bottom: 24px;
+  }
+  .spread-midnight .detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .spread-midnight .detail-item {
+    padding: 18px 22px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .spread-midnight .detail-item .dt {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .spread-midnight .detail-item .dd {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #e0dbd0;
+  }
+
+  /* 3 · ALERT — rose/red stamp treatment */
+  .spread-alert {
+    background: var(--rose);
+    padding: 80px 60px;
+    border-bottom: 3px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .alert-stamp {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    transform: rotate(-8deg);
+    border: 5px solid var(--alert-red);
+    padding: 12px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--alert-red);
+    opacity: 0.85;
+    pointer-events: none;
+    user-select: none;
+  }
+  .spread-alert .kicker {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--alert-red);
+    margin-bottom: 18px;
+  }
+  .spread-alert .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 5.5vw, 72px);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--ink);
+    max-width: 760px;
+    margin-bottom: 30px;
+  }
+  .spread-alert .dek {
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 640px;
+    margin-bottom: 36px;
+    font-weight: 400;
+    color: #2a2a2a;
+  }
+  .spread-alert .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 600px;
+    border-left: 3px solid var(--alert-red);
+    padding-left: 28px;
+    margin-top: 8px;
+  }
+  .spread-alert .t-event {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(214,43,43,0.2);
+  }
+  .spread-alert .t-event:last-child { border-bottom: none; }
+  .spread-alert .t-date {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--alert-red);
+  }
+  .spread-alert .t-desc {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.45;
+    margin-top: 3px;
+  }
+
+  /* 4 · TERMINAL — green on black */
+  .spread-terminal {
+    background: #2a2a2a;
+    color: #e8e4da;
+    padding: 80px 60px;
+    border-bottom: 3px solid #1a1a1a;
+    font-family: 'Inter', sans-serif;
+  }
+  .spread-terminal .sys-header {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(232,228,218,0.35);
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(232,228,218,0.1);
+    padding-bottom: 16px;
+  }
+  .spread-terminal .t-label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .spread-terminal .t-headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3.5vw, 52px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: -0.01em;
+  }
+  .spread-terminal .zone-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin: 36px 0;
+  }
+  .spread-terminal .zone-cell {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 16px 14px;
+    font-size: 13px;
+  }
+  .spread-terminal .zone-cell .zn {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 4px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .spread-terminal .zone-cell .date {
+    font-size: 15px;
+    color: #fff;
+    font-weight: 700;
+  }
+  .spread-terminal .t-body {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(232,228,218,0.8);
+    max-width: 700px;
+  }
+  .spread-terminal .t-body strong {
+    color: #fff;
+  }
+
+  /* 5 · ACADEMIC — drop-cap, ivory */
+  .spread-academic {
+    background: var(--parchment);
+    padding: 80px 60px;
+    border-bottom: 3px solid var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .spread-academic .acad-number {
+    font-family: 'Fraunces', serif;
+    font-size: 200px;
+    font-weight: 900;
+    color: rgba(61,90,71,0.1);
+    line-height: 0.85;
+    margin-bottom: -30px;
+  }
+  .spread-academic .kicker {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 16px;
+  }
+  .spread-academic .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+  .spread-academic .drop-cap-para::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 88px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.75;
+    margin-right: 12px;
+    margin-top: 6px;
+    color: var(--sage);
+  }
+  .spread-academic .drop-cap-para {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #2a2a2a;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .spread-academic .body-para {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 18px;
+  }
+  .spread-academic .pull-quote {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--sage);
+    border-left: 4px solid var(--sage);
+    padding-left: 24px;
+    margin: 32px 0;
+    line-height: 1.4;
+  }
+
+  /* 6 · BIG STAT FINISH — ink */
+  .spread-stat {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 80px 60px;
+    border-bottom: 3px solid #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .spread-stat .stat-number {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(100px, 15vw, 180px);
+    font-weight: 900;
+    line-height: 0.85;
+    color: var(--gold);
+    letter-spacing: -0.04em;
+  }
+  .spread-stat .stat-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    margin-top: 12px;
+  }
+  .spread-stat .kicker {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .spread-stat .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--cream);
+    margin-bottom: 24px;
+  }
+  .spread-stat .dek {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(245,240,232,0.7);
+    margin-bottom: 28px;
+  }
+  .spread-stat .race-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 8px;
+  }
+  .spread-stat .race-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(245,240,232,0.12);
+    font-size: 16px;
+  }
+  .spread-stat .race-row .rl { font-weight: 500; color: rgba(245,240,232,0.75); }
+  .spread-stat .race-row .rv { font-weight: 800; color: var(--gold); font-family: 'Fraunces', serif; font-size: 20px; }
+
+  /* ─── EVENTS BLOCK ─── */
+  .spread-events {
+    background: #f0ebe0;
+    padding: 60px 60px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .events-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 48px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 16px;
+  }
+  .events-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .events-header .ev-date {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+  }
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .event-card {
+    padding: 28px;
+    background: white;
+    border-top: 4px solid var(--rust);
+  }
+  .event-card .ev-time {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 10px;
+  }
+  .event-card .ev-title {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .event-card .ev-desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #444;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    padding: 48px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer .f-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  .footer .f-tag {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .footer h4 {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .footer p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+  .footer .f-cta {
+    padding: 14px 24px;
+    background: var(--rust);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+  }
+
+  /* ─── NAV LINKS ─── */
+  .masthead-sub .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .masthead-sub .nav-links a {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555;
+    text-decoration: none;
+    padding: 2px 0;
+    border-bottom: 1.5px solid transparent;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+  .masthead-sub .nav-links a:hover {
+    color: var(--rust);
+    border-bottom-color: var(--rust);
+  }
+  .masthead-sub .nav-dot {
+    color: #bbb;
+    font-size: 10px;
+    user-select: none;
+  }
+
+  @media (max-width: 768px) {
+
+    /* ── Masthead ── */
+    .masthead { grid-template-columns: 1fr; padding: 28px 20px 18px; text-align: center; gap: 8px; }
+    .masthead-left, .masthead-right { display: none; }
+    .masthead-title .name { font-size: clamp(44px, 12vw, 68px); }
+    .masthead-rule { margin: 0; }
+    .masthead-sub { margin: 0; padding: 8px 20px; flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .masthead-sub .nav-links { flex-wrap: wrap; justify-content: center; gap: 6px; }
+    .masthead-sub > span:first-child,
+    .masthead-sub > span:last-child { display: none; }
+
+    /* ── Spreads ── */
+    .spread-hero { padding: 48px 20px; }
+    .spread-hero::before { display: none; }
+    .spread-hero .headline { font-size: clamp(38px, 10vw, 60px); }
+    .spread-hero .dek { font-size: 17px; }
+
+    .spread-midnight { grid-template-columns: 1fr; padding: 48px 20px; gap: 32px; }
+    .spread-midnight .divider { display: none; }
+    .spread-midnight .big-numeral { font-size: 100px; }
+    .spread-midnight .headline { font-size: clamp(28px, 7vw, 44px); }
+
+    .spread-alert { padding: 48px 20px; }
+    .alert-stamp { display: none; }
+    .spread-alert .headline { font-size: clamp(32px, 8vw, 52px); }
+    .spread-alert .dek { font-size: 16px; }
+
+    .spread-terminal { padding: 48px 20px; }
+    .zone-grid { grid-template-columns: repeat(2, 1fr); }
+    .spread-terminal .t-headline { font-size: clamp(22px, 6vw, 34px); }
+
+    .spread-academic { grid-template-columns: 1fr; padding: 48px 20px; gap: 32px; }
+    .spread-academic .acad-number { display: none; }
+    .spread-academic .headline { font-size: clamp(28px, 7vw, 44px); }
+    .spread-academic .drop-cap-para::first-letter { font-size: 60px; }
+
+    .spread-stat { grid-template-columns: 1fr; padding: 48px 20px; gap: 32px; }
+    .spread-stat .stat-number { font-size: clamp(80px, 18vw, 120px); }
+
+    /* ── Events ── */
+    .spread-events { padding: 40px 20px; }
+    .events-header h2 { font-size: 38px; }
+    .events-grid { grid-template-columns: 1fr; gap: 3px; }
+
+    /* ── Footer ── */
+    .footer { grid-template-columns: 1fr; padding: 36px 20px; gap: 32px; }
+  }
+
+
+  /* ── Additional spread styles from Apr 15 ── */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0e0d0b;
+    --cream: #f5f0e8;
+    --rust: #c84b2f;
+    --midnight: #0a0f1e;
+    --gold: #d4a843;
+    --sage: #3d5a47;
+    --rose: #e8d5d0;
+    --forest: #1e3a2f;
+    --parchment: #ede8d6;
+    --blue-dark: #0d2340;
+    --warm-white: #faf8f3;
+    --alert-red: #d62b2b;
+    --patriots-red: #c8102e;
+    --patriots-blue: #002244;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    background: var(--cream);
+    border-bottom: 3px solid var(--ink);
+    padding: 32px 60px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: 20px;
+  }
+  .masthead-left {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #555; line-height: 1.8;
+  }
+  .masthead-title { text-align: center; }
+  .masthead-title .name {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(52px, 8vw, 96px);
+    font-weight: 900; letter-spacing: -0.02em; line-height: 0.9; color: var(--ink);
+  }
+  .masthead-title .tagline {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.3em;
+    text-transform: uppercase; color: #888; margin-top: 8px;
+  }
+  .masthead-right {
+    text-align: right; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase; color: #555; line-height: 1.8;
+  }
+  .masthead-rule { height: 1px; background: var(--ink); margin: 0 60px; }
+  .masthead-sub {
+    padding: 6px 60px;
+    display: flex; justify-content: space-between;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #666;
+    border-bottom: 1px solid #ccc;
+  }
+  .masthead-sub .nav-links { display: flex; align-items: center; gap: 8px; }
+  .masthead-sub .nav-links a {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #555; text-decoration: none;
+    padding: 2px 0; border-bottom: 1.5px solid transparent;
+    transition: color 0.18s ease, border-color 0.18s ease;
+  }
+  .masthead-sub .nav-links a:hover { color: var(--rust); border-bottom-color: var(--rust); }
+  .masthead-sub .nav-dot { color: #bbb; font-size: 10px; user-select: none; }
+
+  /* ─── STORY 1 · HERO — Patriots' Day ─── */
+  .spread-patriots {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 80px 60px;
+    border-bottom: 3px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .spread-patriots::before {
+    content: '01';
+    position: absolute; right: 40px; top: 30px;
+    font-family: 'Fraunces', serif; font-size: 260px; font-weight: 900;
+    color: rgba(14,13,11,0.04); line-height: 1;
+    pointer-events: none; user-select: none;
+  }
+  .spread-patriots .kicker {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--patriots-red);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .spread-patriots .kicker::before {
+    content: '★';
+    font-size: 14px; color: var(--patriots-red);
+  }
+  .spread-patriots .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 7vw, 90px);
+    font-weight: 900; line-height: 0.92; letter-spacing: -0.02em;
+    color: var(--ink); max-width: 860px; margin-bottom: 32px;
+  }
+  .spread-patriots .dek {
+    font-size: 20px; font-weight: 400; line-height: 1.6;
+    color: #333; max-width: 680px; margin-bottom: 40px;
+  }
+  .spread-patriots .schedule {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2px; max-width: 800px;
+  }
+  .spread-patriots .sched-item {
+    background: var(--ink);
+    border-top: 3px solid var(--patriots-red);
+    padding: 20px 22px;
+  }
+  .spread-patriots .sched-time {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+  }
+  .spread-patriots .sched-event {
+    font-size: 15px; font-weight: 600; line-height: 1.35; color: #fff;
+  }
+  .spread-patriots .sched-loc {
+    font-size: 12px; color: rgba(245,240,232,0.5); margin-top: 4px;
+  }
+  .spread-patriots .byline {
+    margin-top: 40px; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: #999;
+  }
+
+  /* ─── STORY 2 · HIGH SCHOOL — warm split ─── */
+  .spread-school {
+    background: var(--warm-white);
+    padding: 80px 60px;
+    border-bottom: 3px solid var(--ink);
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 70px; align-items: start;
+  }
+  .spread-school .big-num {
+    font-family: 'Fraunces', serif; font-size: 200px; font-weight: 900;
+    color: rgba(14,13,11,0.05); line-height: 0.85; margin-bottom: -24px;
+  }
+  .spread-school .kicker {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 16px;
+  }
+  .spread-school .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 900; line-height: 1.0; color: var(--ink); margin-bottom: 24px;
+  }
+  .spread-school .dek {
+    font-size: 18px; line-height: 1.7; color: #333; margin-bottom: 20px;
+  }
+  .spread-school .body {
+    font-size: 16px; line-height: 1.75; color: #444; margin-bottom: 16px;
+  }
+  .spread-school .sidebar {
+    display: flex; flex-direction: column; gap: 0;
+    border-left: 3px solid var(--ink); padding-left: 28px;
+    margin-top: 8px;
+  }
+  .spread-school .sidebar-head {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.25em;
+    text-transform: uppercase; color: #888; margin-bottom: 20px;
+  }
+  .spread-school .fact {
+    padding: 18px 0; border-bottom: 1px solid #e0dbd0;
+  }
+  .spread-school .fact:last-child { border-bottom: none; }
+  .spread-school .fact .fl {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 4px;
+  }
+  .spread-school .fact .fv {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    font-weight: 700; line-height: 1.2;
+  }
+
+  /* ─── STORY 3 · HOUSING — forest green ─── */
+  .spread-housing {
+    background: var(--forest);
+    color: #e8e4da;
+    padding: 80px 60px;
+    border-bottom: 3px solid #0a2218;
+  }
+  .spread-housing .inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+  }
+  .spread-housing .kicker {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.3em;
+    text-transform: uppercase; color: rgba(212,168,67,0.9); margin-bottom: 16px;
+  }
+  .spread-housing .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 900; line-height: 0.98; color: #fff; margin-bottom: 28px;
+  }
+  .spread-housing .dek {
+    font-size: 18px; font-weight: 300; line-height: 1.65;
+    color: rgba(232,228,218,0.75); margin-bottom: 24px;
+  }
+  .spread-housing .big-num {
+    font-family: 'Fraunces', serif; font-size: 180px; font-weight: 900;
+    color: rgba(212,168,67,0.12); line-height: 0.85; margin-bottom: -20px;
+  }
+  .spread-housing .cards {
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .spread-housing .card {
+    background: rgba(255,255,255,0.05);
+    border-left: 3px solid rgba(212,168,67,0.5);
+    padding: 20px 22px;
+  }
+  .spread-housing .card .ct {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+  }
+  .spread-housing .card .cv {
+    font-size: 16px; font-weight: 500; line-height: 1.5; color: #e8e4da;
+  }
+
+  /* ─── STORY 4 · HIGH SCHOOL BUILDING COMMITTEE — blueprint ─── */
+  .spread-blueprint {
+    background: #0d2340;
+    color: #a8c8e8;
+    padding: 80px 60px;
+    border-bottom: 3px solid #061525;
+    font-family: 'Inter', sans-serif;
+  }
+  .spread-blueprint .bp-header {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.25em;
+    text-transform: uppercase; color: rgba(168,200,232,0.4);
+    border-bottom: 1px solid rgba(168,200,232,0.15);
+    padding-bottom: 16px; margin-bottom: 40px;
+  }
+  .spread-blueprint .inner {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 70px; align-items: start;
+  }
+  .spread-blueprint .kicker {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.3em;
+    text-transform: uppercase; color: #6ab0e0; margin-bottom: 14px;
+  }
+  .spread-blueprint .headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 900; line-height: 1.05; color: #fff; margin-bottom: 26px;
+  }
+  .spread-blueprint .dek {
+    font-size: 17px; font-weight: 300; line-height: 1.7;
+    color: rgba(168,200,232,0.75); margin-bottom: 20px;
+  }
+  .spread-blueprint .why {
+    margin-top: 32px; padding: 22px 28px;
+    background: rgba(106,176,224,0.1);
+    border-left: 3px solid #6ab0e0;
+  }
+  .spread-blueprint .why .wl {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #6ab0e0; margin-bottom: 8px;
+  }
+  .spread-blueprint .why p {
+    font-size: 15px; line-height: 1.65; color: rgba(168,200,232,0.8);
+  }
+  .spread-blueprint .meeting-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(168,200,232,0.15);
+    padding: 28px;
+  }
+  .spread-blueprint .meeting-box .mb-head {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #6ab0e0; margin-bottom: 20px;
+  }
+  .spread-blueprint .mb-row {
+    padding: 12px 0; border-bottom: 1px solid rgba(168,200,232,0.1);
+    font-size: 14px; color: #a8c8e8; line-height: 1.5;
+  }
+  .spread-blueprint .mb-row:last-child { border-bottom: none; }
+  .spread-blueprint .mb-row strong { color: #fff; display: block; margin-bottom: 2px; }
+
+  /* ─── STORY 5 · LIBRARY + LIQUOR ─── */
+  .spread-briefs {
+    background: var(--parchment);
+    padding: 80px 60px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .briefs-header {
+    font-family: 'Fraunces', serif;
+    font-size: 52px; font-weight: 900; line-height: 1;
+    letter-spacing: -0.02em; margin-bottom: 48px;
+    border-bottom: 2px solid var(--ink); padding-bottom: 16px;
+  }
+  .briefs-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+  }
+  .brief-item { }
+  .brief-item .bi-kicker {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 12px;
+  }
+  .brief-item .bi-headline {
+    font-family: 'Fraunces', serif; font-size: 26px; font-weight: 800;
+    line-height: 1.15; margin-bottom: 14px;
+  }
+  .brief-item .bi-body {
+    font-size: 15px; line-height: 1.7; color: #444;
+  }
+  .brief-item .bi-source {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #999; margin-top: 12px;
+  }
+
+  /* ─── EVENTS TODAY ─── */
+  .spread-events {
+    background: var(--ink);
+    padding: 60px 60px;
+    border-bottom: 3px solid #000;
+  }
+  .events-header {
+    display: flex; align-items: baseline; gap: 24px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid rgba(255,255,255,0.15);
+    padding-bottom: 16px;
+  }
+  .events-header h2 {
+    font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900;
+    line-height: 1; letter-spacing: -0.02em; color: var(--cream);
+  }
+  .events-header .ev-date {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(245,240,232,0.4);
+  }
+  .events-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;
+  }
+  .event-card {
+    padding: 24px 22px;
+    background: rgba(255,255,255,0.04);
+    border-top: 3px solid var(--rust);
+  }
+  .event-card.gold { border-top-color: var(--gold); }
+  .event-card.sage { border-top-color: #6ab0e0; }
+  .event-card .ev-time {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 10px;
+  }
+  .event-card.gold .ev-time { color: var(--gold); }
+  .event-card.sage .ev-time { color: #6ab0e0; }
+  .event-card .ev-title {
+    font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700;
+    line-height: 1.2; margin-bottom: 10px; color: var(--cream);
+  }
+  .event-card .ev-desc {
+    font-size: 13px; line-height: 1.6; color: rgba(245,240,232,0.55);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--cream);
+    border-top: 3px solid var(--ink);
+    padding: 48px 60px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;
+  }
+  .footer .f-brand {
+    font-family: 'Fraunces', serif; font-size: 32px;
+    font-weight: 900; color: var(--ink); margin-bottom: 8px;
+  }
+  .footer .f-tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #888;
+  }
+  .footer h4 {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 12px;
+  }
+  .footer p { font-size: 13px; line-height: 1.7; color: #444; }
+  .footer a.f-cta {
+    display: inline-block; margin-top: 20px;
+    padding: 14px 24px; background: var(--rust); color: white;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; text-decoration: none;
+  }
+  .prev-edition {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; margin-top: 12px;
+  }
+  .prev-edition a { color: var(--rust); text-decoration: none; }
+  .prev-edition a:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+
+    /* ── Masthead ── */
+    .masthead {
+      grid-template-columns: 1fr;
+      padding: 28px 20px 18px;
+      text-align: center;
+      gap: 8px;
+    }
+    .masthead-left, .masthead-right { display: none; }
+    .masthead-title .name { font-size: clamp(44px, 12vw, 68px); }
+    .masthead-rule { margin: 0; }
+    .masthead-sub {
+      margin: 0;
+      padding: 8px 20px;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+    .masthead-sub .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+    .masthead-sub > span:first-child,
+    .masthead-sub > span:last-child { display: none; }
+
+    /* ── Hero / Patriots ── */
+    .spread-patriots { padding: 48px 20px 40px; }
+    .spread-patriots::before { display: none; }
+    .spread-patriots .headline { font-size: clamp(38px, 10vw, 56px); }
+    .spread-patriots .dek { font-size: 17px; }
+    .spread-patriots .schedule { grid-template-columns: 1fr; gap: 3px; }
+
+    /* ── School spread ── */
+    .spread-school { grid-template-columns: 1fr; padding: 48px 20px; gap: 36px; }
+    .spread-school .big-num { display: none; }
+    .spread-school .headline { font-size: clamp(30px, 8vw, 44px); }
+    .spread-school .dek { font-size: 16px; }
+    .spread-school .sidebar {
+      border-left: none; border-top: 3px solid var(--ink);
+      padding-left: 0; padding-top: 24px;
+    }
+
+    /* ── Housing spread ── */
+    .spread-housing { padding: 48px 20px; }
+    .spread-housing .inner { grid-template-columns: 1fr; gap: 36px; }
+    .spread-housing .big-num { display: none; }
+    .spread-housing .headline { font-size: clamp(30px, 8vw, 44px); }
+    .spread-housing .dek { font-size: 16px; }
+
+    /* ── Blueprint spread ── */
+    .spread-blueprint { padding: 48px 20px; }
+    .spread-blueprint .bp-header { font-size: 9px; }
+    .spread-blueprint .inner { grid-template-columns: 1fr; gap: 32px; }
+    .spread-blueprint .headline { font-size: clamp(28px, 7vw, 40px); }
+    .spread-blueprint .dek { font-size: 15px; }
+
+    /* ── Briefs ── */
+    .spread-briefs { padding: 48px 20px; }
+    .briefs-header { font-size: 38px; margin-bottom: 32px; }
+    .briefs-grid { grid-template-columns: 1fr; gap: 0; }
+    .brief-item { padding: 28px 0; border-bottom: 1px solid #ccc; }
+    .brief-item:first-child { padding-top: 0; }
+    .brief-item:last-child { border-bottom: none; }
+
+    /* ── Events ── */
+    .spread-events { padding: 40px 20px; }
+    .events-header { flex-direction: column; gap: 4px; margin-bottom: 24px; }
+    .events-header h2 { font-size: 38px; }
+    .events-grid { grid-template-columns: 1fr; gap: 3px; }
+
+    /* ── Footer ── */
+    .footer { grid-template-columns: 1fr; padding: 36px 20px; gap: 32px; }
+    .footer .f-brand { font-size: 26px; }
+  }
+
+  /* ─── AROUND TOWN RECURRING EVENTS ─── */
+  .spread-around-town {
+    background: var(--warm-white);
+    padding: 60px 60px;
+    border-bottom: 3px solid var(--ink);
+  }
+  .around-town-header {
+    display: flex; align-items: baseline; gap: 20px;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 14px; margin-bottom: 36px;
+  }
+  .around-town-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 48px; font-weight: 900;
+    line-height: 1; letter-spacing: -0.02em;
+  }
+  .around-town-header .at-sub {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #999;
+  }
+  .around-town-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+  }
+  .at-card {
+    padding: 22px 22px;
+    background: white;
+    border-top: 3px solid var(--ink);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .at-card.music  { border-top-color: var(--rust); }
+  .at-card.food   { border-top-color: var(--gold); }
+  .at-card.arts   { border-top-color: var(--sage); }
+  .at-card.nature { border-top-color: #6ab0e0; }
+  .at-tag {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+  .at-card.music .at-tag  { color: var(--rust); }
+  .at-card.food .at-tag   { color: var(--gold); }
+  .at-card.arts .at-tag   { color: var(--sage); }
+  .at-card.nature .at-tag { color: #6ab0e0; }
+  .at-name {
+    font-family: 'Fraunces', serif;
+    font-size: 20px; font-weight: 800; line-height: 1.15; color: var(--ink);
+  }
+  .at-cadence {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: #888;
+  }
+  .at-desc { font-size: 14px; line-height: 1.6; color: #444; }
+  .at-addr { font-size: 11px; color: #999; margin-top: 2px; }
+
+  @media (max-width: 768px) {
+    .spread-around-town { padding: 40px 20px; }
+    .around-town-grid { grid-template-columns: 1fr; gap: 3px; }
+  }
+
+
+  /* ─── SUNDAY EDITION OVERRIDES ─── */
+  .sunday-flag {
+    background: var(--ink);
+    color: var(--cream);
+    text-align: center;
+    padding: 7px 60px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--ink);
+  }
+
+  /* ─── TODAY CARDS ─── */
+  .today-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+  .today-card {
+    background: var(--cream);
+    padding: 28px 28px 24px;
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+  }
+  .today-card.hl { border-top-color: var(--rust); }
+  .today-card .tc-time {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 8px;
+  }
+  .today-card.hl .tc-time { color: var(--rust); }
+  .today-card .tc-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px; font-weight: 800; line-height: 1.15;
+    color: var(--ink); margin-bottom: 8px;
+  }
+  .today-card .tc-desc { font-size: 14px; line-height: 1.6; color: #444; }
+
+  /* ─── WEEK GRID ─── */
+  .week-section {
+    padding: 60px 60px 0;
+    background: var(--warm-white);
+  }
+  .week-section-header {
+    font-family: 'Fraunces', serif;
+    font-size: 52px; font-weight: 900; line-height: 1;
+    letter-spacing: -0.02em;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 16px;
+    margin-bottom: 40px;
+    display: flex; align-items: baseline; gap: 20px;
+  }
+  .week-section-header .wsh-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #888;
+  }
+  .day-block { margin-bottom: 36px; }
+  .day-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--ink);
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 4px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .day-label .dl-date {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: none; color: #888;
+  }
+  .ev-row {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 11px 0; border-bottom: 1px solid #e8e4da;
+  }
+  .ev-row:last-child { border-bottom: none; }
+  .ev-time {
+    font-size: 11px; font-weight: 700; color: #888;
+    min-width: 70px; flex-shrink: 0; padding-top: 2px;
+    letter-spacing: 0.05em;
+  }
+  .ev-body { flex: 1; min-width: 0; }
+  .ev-title {
+    font-size: 15px; font-weight: 600; line-height: 1.35;
+    color: var(--ink);
+  }
+  .ev-title a { color: var(--rust); text-decoration: none; }
+  .ev-title a:hover { text-decoration: underline; }
+  .ev-desc { font-size: 13px; color: #555; margin-top: 2px; line-height: 1.5; }
+  .ev-badges { display: inline-flex; gap: 5px; margin-left: 8px; vertical-align: middle; }
+  .badge {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 2px 7px;
+    border-radius: 999px; white-space: nowrap;
+  }
+  .badge-free { background: #e4f2e4; color: #2a6b2a; }
+  .badge-kids { background: #deeaf8; color: #1a4e8a; }
+  .badge-reg  { background: #fdf0d8; color: #7a4a00; }
+  .badge-gov  { background: #f0ede8; color: #555; border: 1px solid #ccc; }
+  .badge-21   { background: #f0e8f5; color: #5a2a7a; }
+
+  /* ─── VENUE CARDS ─── */
+  .venues-section {
+    padding: 60px 60px;
+    background: var(--parchment);
+    border-top: 3px solid var(--ink);
+  }
+  .venues-header {
+    font-family: 'Fraunces', serif;
+    font-size: 48px; font-weight: 900; line-height: 1;
+    letter-spacing: -0.02em;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 14px; margin-bottom: 28px;
+  }
+  .venues-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .vc { border-radius: 0; overflow: hidden; }
+  .vc-head {
+    padding: 16px 18px 14px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .vc-head-inner { display: flex; gap: 10px; align-items: center; }
+  .vc-head img { width: 30px; height: 30px; border-radius: 4px; object-fit: cover; flex-shrink: 0; }
+  .vc-name { font-size: 15px; font-weight: 700; line-height: 1.2; }
+  .vc-sub { font-size: 11px; margin-top: 2px; opacity: 0.6; }
+  .vc-link {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.12em;
+    text-transform: uppercase; white-space: nowrap;
+    padding: 4px 10px; text-decoration: none; flex-shrink: 0;
+  }
+  .vc-body {
+    background: white;
+    border: 1px solid #e0dbd0;
+    border-top: none;
+  }
+  .vc-row {
+    display: flex; gap: 8px; padding: 8px 14px;
+    border-bottom: 1px solid #f0ece4;
+    align-items: baseline;
+  }
+  .vc-row:last-child { border-bottom: none; }
+  .vc-day { font-size: 11px; color: #888; min-width: 26px; flex-shrink: 0; font-weight: 600; }
+  .vc-evt { font-size: 13px; color: var(--ink); flex: 1; min-width: 0; line-height: 1.4; }
+  .vc-price { font-size: 11px; color: #888; white-space: nowrap; flex-shrink: 0; }
+  .vc-hours {
+    padding: 7px 14px; font-size: 11px; color: #888;
+    background: #faf8f3; border-top: 1px solid #e8e4da;
+  }
+
+  /* venue brand themes */
+  .dc .vc-head { background: #000; }
+  .dc .vc-name { color: #F7FE3A; }
+  .dc .vc-sub { color: rgba(255,255,255,0.65); }
+  .dc .vc-link { background: #F7FE3A; color: #000; }
+  .dc .vc-evt a { color: #c84b2f; text-decoration: none; }
+
+  .mb .vc-head { background: #141827; }
+  .mb .vc-name { color: #fff; }
+  .mb .vc-sub { color: rgba(255,255,255,0.6); }
+  .mb .vc-link { background: #3346FF; color: #fff; }
+  .mb .vc-evt a { color: #3346FF; text-decoration: none; }
+
+  .gabh .vc-head { background: #022E62; }
+  .gabh .vc-name { color: #fff; }
+  .gabh .vc-sub { color: rgba(255,255,255,0.6); }
+  .gabh .vc-link { background: #B21832; color: #fff; }
+  .gabh .vc-evt a { color: #B21832; text-decoration: none; }
+
+  /* ─── LOOK AHEAD ─── */
+  .look-ahead-section {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 60px 60px;
+  }
+  .la-header {
+    font-family: 'Fraunces', serif;
+    font-size: 48px; font-weight: 900; line-height: 1;
+    letter-spacing: -0.02em; color: var(--cream);
+    border-bottom: 2px solid rgba(245,240,232,0.2);
+    padding-bottom: 14px; margin-bottom: 28px;
+    display: flex; align-items: baseline; gap: 20px;
+  }
+  .la-header span {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .la-row {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.1);
+  }
+  .la-row:last-child { border-bottom: none; }
+  .la-date {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--gold); min-width: 60px; flex-shrink: 0; padding-top: 2px;
+  }
+  .la-text { font-size: 15px; font-weight: 500; color: var(--cream); line-height: 1.35; }
+  .la-text a { color: var(--gold); text-decoration: none; }
+  .la-text a:hover { text-decoration: underline; }
+  .la-sub { font-size: 13px; color: rgba(245,240,232,0.55); margin-top: 3px; line-height: 1.5; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--cream); border-top: 3px solid var(--ink);
+    padding: 48px 60px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;
+  }
+  .footer .f-brand {
+    font-family: 'Fraunces', serif; font-size: 28px;
+    font-weight: 900; color: var(--ink); margin-bottom: 6px;
+  }
+  .footer .f-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #888; }
+  .footer h4 { font-size: 10px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--rust); margin-bottom: 10px; }
+  .footer p { font-size: 13px; line-height: 1.7; color: #444; }
+  .footer a.f-cta {
+    display: inline-block; margin-top: 18px;
+    padding: 12px 22px; background: var(--rust); color: white;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; text-decoration: none;
+  }
+  .prev-ed { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 12px; }
+  .prev-ed a { color: var(--rust); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .sunday-flag { padding: 7px 20px; }
+    .masthead { grid-template-columns: 1fr; padding: 28px 20px 18px; text-align: center; gap: 8px; }
+    .masthead-left, .masthead-right { display: none; }
+    .masthead-title .name { font-size: clamp(44px, 12vw, 68px); }
+    .masthead-rule { margin: 0; }
+    .masthead-sub { margin: 0; padding: 8px 20px; flex-wrap: wrap; gap: 6px; justify-content: center; }
+    .masthead-sub .nav-links { flex-wrap: wrap; justify-content: center; }
+    .masthead-sub > span:first-child, .masthead-sub > span:last-child { display: none; }
+    .today-grid { grid-template-columns: 1fr; gap: 3px; }
+    .week-section { padding: 40px 20px 0; }
+    .week-section-header { font-size: 38px; }
+    .venues-section { padding: 40px 20px; }
+    .venues-grid { grid-template-columns: 1fr; }
+    .venues-header { font-size: 38px; }
+    .look-ahead-section { padding: 40px 20px; }
+    .la-header { font-size: 38px; }
+    .footer { grid-template-columns: 1fr; padding: 36px 20px; gap: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ SUNDAY FLAG ═══ -->
+<div class="sunday-flag">Sunday Edition &nbsp;·&nbsp; Week Ahead &nbsp;·&nbsp; April 19, 2026</div>
+
+<!-- ═══ MASTHEAD ═══ -->
+<header class="masthead">
+  <div class="masthead-left">
+    Medford, Massachusetts<br>
+    Est. 2026 · Free to Read
+  </div>
+  <div class="masthead-title">
+    <div class="name">Medford Mercury</div>
+    <div class="tagline">The Smartest Way to Keep Up with Medford</div>
+  </div>
+  <div class="masthead-right">
+    Sunday Edition<br>
+    April 19, 2026
+  </div>
+</header>
+<div class="masthead-rule"></div>
+<div class="masthead-sub">
+  <span>Vol. I · No. 5</span>
+  <span class="nav-links">
+    <a href="#today">Today</a>
+    <span class="nav-dot">·</span>
+    <a href="#this-week">This Week</a>
+    <span class="nav-dot">·</span>
+    <a href="#venues">Local Venues</a>
+    <span class="nav-dot">·</span>
+    <a href="#look-ahead">Look Ahead</a>
+  </span>
+  <span><a href="/archive" style="color:inherit;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color 0.18s;" onmouseover="this.style.borderBottomColor='#c84b2f'" onmouseout="this.style.borderBottomColor='transparent'">Past Issues</a></span>
+</div>
+
+
+<!-- ═══ TODAY ═══ -->
+<section id="today">
+  <div class="today-grid">
+    <div class="today-card hl">
+      <div class="tc-time">11:00 AM · Free</div>
+      <div class="tc-title">Sunday Run at Medford Brewing</div>
+      <div class="tc-desc">Meet out front at 30 Harvard Ave. Choose 3, 5, or 7 miles. All paces welcome. Taproom opens at noon — cold beer at the finish. No registration, just show up.</div>
+    </div>
+    <div class="today-card hl">
+      <div class="tc-time">All Day · Free</div>
+      <div class="tc-title">Record Store Day — Deep Cuts</div>
+      <div class="tc-desc">Special vinyl releases, in-store events, taproom open at noon. One of the best days on the calendar at 21 Main St. RSD drops sell out fast — get there early.</div>
+    </div>
+    <div class="today-card">
+      <div class="tc-time">Tonight — Reminder</div>
+      <div class="tc-title">Check Your Street Sweeping Zone</div>
+      <div class="tc-desc">Zone 1 sweeps Tuesday at 8 AM. Move your car tonight. Find your zone at medfordma.org/street-sweeping — ticketing and towing in effect all day.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ THIS WEEK ═══ -->
+<section id="this-week" class="week-section">
+  <div class="week-section-header">
+    This Week in Medford
+    <span class="wsh-sub">April 20 – 26</span>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Monday <span class="dl-date">April 20 · Patriots' Day · City Hall closed · Schools closed</span></div>
+    <div class="ev-row">
+      <div class="ev-time">10:15 AM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">Sarah Bradlee Fulton Statue Dedication</a> <span class="ev-badges"><span class="badge badge-free">Free</span></span></div>
+        <div class="ev-desc">City Hall · Years in the making — Medford's Revolutionary War heroine gets her permanent place outside City Hall</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">11:00 AM</div>
+      <div class="ev-body">
+        <div class="ev-title">Patriots' Day Festivities <span class="ev-badges"><span class="badge badge-free">Free</span></span></div>
+        <div class="ev-desc">Medford Square · All ages · Food, music, community gathering following the statue dedication</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">~12:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title">Paul Revere Arrives on Horseback <span class="ev-badges"><span class="badge badge-free">Free</span></span></div>
+        <div class="ev-desc">43 High St + 447 High St · Reenactment of Revere's stop in Medford on his midnight ride to Concord</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">10 AM–1 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://medfordpolice.com" target="_blank">MPD Community Inclusion Day</a> <span class="ev-badges"><span class="badge badge-free">Free</span><span class="badge badge-kids">Kids + families</span></span></div>
+        <div class="ev-desc">100 Main St · For individuals with ASD and developmental disabilities · Meet first responders, touch-a-truck · Food provided</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">9 AM–Noon</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org" target="_blank">Parkour Generations Vacation Camp</a> <span class="ev-badges"><span class="badge badge-reg">Registration required</span><span class="badge badge-kids">Ages 7–13</span></span></div>
+        <div class="ev-desc">Tufts Park · Climbing, strength, and conditioning · Runs Mon–Thu through vacation week</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">9 AM–Noon</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org" target="_blank">Battle Robots Vacation Camp</a> <span class="ev-badges"><span class="badge badge-reg">Registration required</span><span class="badge badge-kids">Ages 7–12</span></span></div>
+        <div class="ev-desc">Recreation Dept · Build and battle robots, no experience needed · Mon–Thu through vacation week</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">10 AM–1 PM</div>
+      <div class="ev-body">
+        <div class="ev-title">Public Skating — LoConte Rink <span class="ev-badges"><span class="badge badge-kids">Families</span></span></div>
+        <div class="ev-desc">LoConte Rink · Daily Mon–Thu during vacation week</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Tuesday <span class="dl-date">April 21</span></div>
+    <div class="ev-row">
+      <div class="ev-time">8:00 AM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org/about/news/details/~board/city-news/post/spring-big-sweep-to-begin-on-april-21" target="_blank">Street Sweeping Zone 1 — no parking</a></div>
+        <div class="ev-desc">No parking on Zone 1 streets 8 AM–6 PM · Ticketing and towing in effect · medfordma.org/street-sweeping to find your zone</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">7:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://pn.snpit.co/mwHV9P" target="_blank">Paint Nite: Sip + Paint — Great American Beer Hall</a></div>
+        <div class="ev-desc">142 Mystic Ave · Guided painting session with drinks · Tickets at pn.snpit.co/mwHV9P</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">7:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://medfordbrew.com/events/trivia-night-9/" target="_blank">Trivia Night — Medford Brewing</a> <span class="ev-badges"><span class="badge badge-21">21+</span></span></div>
+        <div class="ev-desc">30 Harvard Ave · Teams of 2–6 · 6 rounds · Prizes for top teams · Arrive early to snag a table · medfordbrew.com</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">6:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">Parks Commission Meeting</a> <span class="ev-badges"><span class="badge badge-gov">City Hall</span></span></div>
+        <div class="ev-desc">Open to the public · medfordma.org for agenda</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Wednesday <span class="dl-date">April 22</span></div>
+    <div class="ev-row">
+      <div class="ev-time">7:30 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.gabhall.com/events" target="_blank">Line Dancing Night — Great American Beer Hall</a></div>
+        <div class="ev-desc">142 Mystic Ave · Jack Daniel's on site with giveaways · Lessons included · No experience needed · gabhall.com</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">5:30 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">Commission for Persons with Disabilities</a> <span class="ev-badges"><span class="badge badge-gov">City Hall</span></span></div>
+        <div class="ev-desc">Open to the public</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">6:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">City Council Special Meeting</a> <span class="ev-badges"><span class="badge badge-gov">City Hall</span></span></div>
+        <div class="ev-desc">Open to the public</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">7:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">Bicycle Advisory Commission</a> <span class="ev-badges"><span class="badge badge-gov">City Hall</span></span></div>
+        <div class="ev-desc">Open to the public</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Thursday <span class="dl-date">April 23</span></div>
+    <div class="ev-row">
+      <div class="ev-time">11 AM–3 PM</div>
+      <div class="ev-body">
+        <div class="ev-title">MPD Video Game Day <span class="ev-badges"><span class="badge badge-free">Free</span><span class="badge badge-kids">Kids</span></span></div>
+        <div class="ev-desc">100 Main St · Kids meet officers and play video games · Food provided · No registration needed</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">11 AM–12:30 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">Invasive Plants Walk — Arbor Day</a> <span class="ev-badges"><span class="badge badge-free">Free</span></span></div>
+        <div class="ev-desc">City-organized guided nature walk · Location TBA · medfordma.org for meeting point</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">8:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://dice.fm/venue/deep-cuts-nd6q" target="_blank">Josephine Network + Kathy Snax + Puke Pisstols — Deep Cuts</a></div>
+        <div class="ev-desc">21 Main St · NYC power pop and glam rock · $17 · Tickets at dice.fm or no fee at the bar · deepcuts.rocks</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Friday <span class="dl-date">April 24</span></div>
+    <div class="ev-row">
+      <div class="ev-time">5–8 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://medfordbrew.com/events/crop-circle-pizza/" target="_blank">Crop Circle Pizza Pop-up — Medford Brewing</a></div>
+        <div class="ev-desc">30 Harvard Ave · Organic sourdough pizza with a 12-year-old wild sourdough starter · medfordbrew.com</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">9:30 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.gabhall.com/events" target="_blank">DJ Artie V — Great American Beer Hall</a></div>
+        <div class="ev-desc">142 Mystic Ave · Late night DJ set · gabhall.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-label">Saturday <span class="dl-date">April 25</span></div>
+    <div class="ev-row">
+      <div class="ev-time">9:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.gabhall.com/events" target="_blank">Coverstory Band — Great American Beer Hall</a></div>
+        <div class="ev-desc">142 Mystic Ave · Live cover band · gabhall.com</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="day-block" style="padding-bottom: 60px;">
+    <div class="day-label">Sunday <span class="dl-date">April 26</span></div>
+    <div class="ev-row">
+      <div class="ev-time">11:00 AM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://medfordbrew.com/events/sunday-run-5/" target="_blank">Sunday Run — Medford Brewing</a> <span class="ev-badges"><span class="badge badge-free">Free</span></span></div>
+        <div class="ev-desc">30 Harvard Ave · Meet out front · 3, 5, or 7-mile loops · All paces · Taproom opens at noon</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">9 AM–4 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.gabhall.com/events" target="_blank">Card Show — Great American Beer Hall</a></div>
+        <div class="ev-desc">142 Mystic Ave · Trading cards, sports memorabilia, collectibles · Breakfast from 8 AM · gabhall.com</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">8:00 PM</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.gabhall.com/events" target="_blank">Concert: Hungria — Great American Beer Hall</a></div>
+        <div class="ev-desc">142 Mystic Ave · Brazilian entertainer · Live concert · gabhall.com for tickets</div>
+      </div>
+    </div>
+    <div class="ev-row">
+      <div class="ev-time">All day</div>
+      <div class="ev-body">
+        <div class="ev-title"><a href="https://www.medfordma.org" target="_blank">Hoops and Heroes Basketball — First Sunday</a> <span class="ev-badges"><span class="badge badge-reg">Registration required</span><span class="badge badge-kids">Grades 3–8</span></span></div>
+        <div class="ev-desc">Recreation Dept · Runs Sundays through June 14 · No experience necessary · medfordma.org to register</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ VENUE CARDS ═══ -->
+<section id="venues" class="venues-section">
+  <div class="venues-header">Local Venues</div>
+  <div class="venues-grid">
+
+    <div class="vc dc">
+      <div class="vc-head">
+        <div class="vc-head-inner">
+          <div>
+            <div class="vc-name">Deep Cuts</div>
+            <div class="vc-sub">21 Main St · music · brewery · records</div>
+          </div>
+        </div>
+        <a class="vc-link" href="https://www.deepcuts.rocks/events" target="_blank">Calendar →</a>
+      </div>
+      <div class="vc-body">
+        <div class="vc-row"><span class="vc-day">Mon</span><span class="vc-evt">Closed — Patriots' Day</span></div>
+        <div class="vc-row"><span class="vc-day">Tue</span><span class="vc-evt"><a href="https://dice.fm/venue/deep-cuts-nd6q" target="_blank">Cassetti Spaghetti: All Cassette DJ Night</a></span><span class="vc-price">Free+</span></div>
+        <div class="vc-row"><span class="vc-day">Wed</span><span class="vc-evt">Taproom open · no show listed</span></div>
+        <div class="vc-row"><span class="vc-day">Thu</span><span class="vc-evt"><a href="https://dice.fm/venue/deep-cuts-nd6q" target="_blank">Josephine Network / Kathy Snax / Puke Pisstols</a></span><span class="vc-price">$17</span></div>
+        <div class="vc-row"><span class="vc-day">Fri</span><span class="vc-evt">Check deepcuts.rocks for show listing</span></div>
+        <div class="vc-row"><span class="vc-day">Sat</span><span class="vc-evt"><a href="https://dice.fm/venue/deep-cuts-nd6q" target="_blank">Count Zero 30th Anniversary Celebration</a></span><span class="vc-price">$17</span></div>
+        <div class="vc-row"><span class="vc-day">Sun</span><span class="vc-evt">Taproom open 12–8 PM</span></div>
+        <div class="vc-hours">Tue–Thu 12–9:30 PM · Fri–Sat 12–11 PM · Sun 12–8 PM</div>
+      </div>
+    </div>
+
+    <div class="vc mb">
+      <div class="vc-head">
+        <div class="vc-head-inner">
+          <img src="https://medfordbrew.com/wp-content/uploads/2025/10/Company-Logo.png" alt="Medford Brewing logo">
+          <div>
+            <div class="vc-name">Medford Brewing Co.</div>
+            <div class="vc-sub">30 Harvard Ave · taproom · food trucks · runs</div>
+          </div>
+        </div>
+        <a class="vc-link" href="https://medfordbrew.com/events/" target="_blank">Calendar →</a>
+      </div>
+      <div class="vc-body">
+        <div class="vc-row"><span class="vc-day">Sun</span><span class="vc-evt"><a href="https://medfordbrew.com/events/sunday-run-10/" target="_blank">Sunday Run — meet 11 AM, taproom noon</a></span><span class="vc-price">Free</span></div>
+        <div class="vc-row"><span class="vc-day">Mon</span><span class="vc-evt">Taproom open 3–10 PM</span></div>
+        <div class="vc-row"><span class="vc-day">Tue</span><span class="vc-evt"><a href="https://medfordbrew.com/events/trivia-night-9/" target="_blank">Trivia Night — teams of 2–6, prizes</a></span><span class="vc-price">7 PM · 21+</span></div>
+        <div class="vc-row"><span class="vc-day">Wed</span><span class="vc-evt">Taproom open 3–10 PM</span></div>
+        <div class="vc-row"><span class="vc-day">Thu</span><span class="vc-evt">Taproom open 3–10 PM</span></div>
+        <div class="vc-row"><span class="vc-day">Fri</span><span class="vc-evt"><a href="https://medfordbrew.com/events/crop-circle-pizza/" target="_blank">Crop Circle Pizza pop-up — organic sourdough</a></span><span class="vc-price">5–8 PM</span></div>
+        <div class="vc-row"><span class="vc-day">Sat</span><span class="vc-evt">Taproom open 12–10 PM</span></div>
+        <div class="vc-hours">Mon–Thu 3–10 PM · Fri–Sat 12–10 PM · Sun 12–8 PM</div>
+      </div>
+    </div>
+
+    <div class="vc gabh">
+      <div class="vc-head">
+        <div class="vc-head-inner">
+          <img src="https://images.squarespace-cdn.com/content/v1/6761d96f807a6a3c15b567a0/9bc94fc3-1639-4669-9409-29ef074aee91/GABH_logo_simple.png?format=1500w" alt="Great American Beer Hall logo">
+          <div>
+            <div class="vc-name">Great American Beer Hall</div>
+            <div class="vc-sub">142 Mystic Ave · bar · events · sports</div>
+          </div>
+        </div>
+        <a class="vc-link" href="https://www.gabhall.com/events" target="_blank">Calendar →</a>
+      </div>
+      <div class="vc-body">
+        <div class="vc-row"><span class="vc-day">Mon</span><span class="vc-evt">Open · no event listed</span></div>
+        <div class="vc-row"><span class="vc-day">Tue</span><span class="vc-evt"><a href="https://pn.snpit.co/mwHV9P" target="_blank">Paint Nite: Sip + Paint</a></span><span class="vc-price">7 PM</span></div>
+        <div class="vc-row"><span class="vc-day">Wed</span><span class="vc-evt"><a href="https://www.gabhall.com/events" target="_blank">Line Dancing Night + Jack Daniel's</a></span><span class="vc-price">7:30 PM</span></div>
+        <div class="vc-row"><span class="vc-day">Thu</span><span class="vc-evt">Open · no event listed</span></div>
+        <div class="vc-row"><span class="vc-day">Fri</span><span class="vc-evt"><a href="https://www.gabhall.com/events" target="_blank">DJ Artie V</a></span><span class="vc-price">9:30 PM</span></div>
+        <div class="vc-row"><span class="vc-day">Sat</span><span class="vc-evt"><a href="https://www.gabhall.com/events" target="_blank">Coverstory Band — live cover band</a></span><span class="vc-price">9 PM</span></div>
+        <div class="vc-row"><span class="vc-day">Sun</span><span class="vc-evt"><a href="https://www.gabhall.com/events" target="_blank">Card Show (9 AM) · Concert: Hungria (8 PM)</a></span></div>
+        <div class="vc-hours">Mon–Wed 12–11 PM · Thu 12–1 AM · Fri 12–2 AM · Sat 11–2 AM · Sun 11–11 PM</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══ LOOK AHEAD ═══ -->
+<section id="look-ahead" class="look-ahead-section">
+  <div class="la-header">
+    Look Ahead <span>Coming up in Medford</span>
+  </div>
+  <div class="la-row">
+    <div class="la-date">Apr 27</div>
+    <div>
+      <div class="la-text"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">High School Building Committee Meeting</a></div>
+      <div class="la-sub">6:30 PM · MHS + Zoom · PSR report due June 25 · 6 finalist designs still in play</div>
+    </div>
+  </div>
+  <div class="la-row">
+    <div class="la-date">Apr 28</div>
+    <div>
+      <div class="la-text"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">City Council Meeting</a></div>
+      <div class="la-sub">7 PM · City Hall · First regular session after the long weekend</div>
+    </div>
+  </div>
+  <div class="la-row">
+    <div class="la-date">Apr 28</div>
+    <div>
+      <div class="la-text"><a href="https://medfordchamberma.com/events" target="_blank">Medford Chamber of Commerce Awards Luncheon</a></div>
+      <div class="la-sub">Annual recognition event · Register at medfordchamberma.com</div>
+    </div>
+  </div>
+  <div class="la-row">
+    <div class="la-date">Apr 29</div>
+    <div>
+      <div class="la-text"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">Public Info Session: Tufts/Boston Ave Zoning Proposal</a></div>
+      <div class="la-sub">City Hall · Residents can weigh in on proposed zoning changes near Tufts</div>
+    </div>
+  </div>
+  <div class="la-row">
+    <div class="la-date">Apr 29</div>
+    <div>
+      <div class="la-text"><a href="https://www.medfordma.org/about/events-calendar" target="_blank">Climate Equity Council Meeting</a></div>
+      <div class="la-sub">6:30 PM · City Hall · Open to the public</div>
+    </div>
+  </div>
+  <div class="la-row">
+    <div class="la-date">May 2</div>
+    <div>
+      <div class="la-text"><a href="https://www.medfordma.org" target="_blank">Electronics Recycling Day</a></div>
+      <div class="la-sub">City-organized drop-off for old devices, monitors, and appliances · Details at medfordma.org</div>
+    </div>
+  </div>
+  <div class="la-row">
+    <div class="la-date">May 2</div>
+    <div>
+      <div class="la-text"><a href="https://www.eventbrite.com/d/ma--medford/events/" target="_blank">Geologic History of Southern Middlesex Fells — Guided Walk</a></div>
+      <div class="la-sub">11 AM · Bellevue Pond, South Border Rd · Eventbrite for tickets</div>
+    </div>
+  </div>
+  <div class="la-row">
+    <div class="la-date">May 2–3</div>
+    <div>
+      <div class="la-text"><a href="https://www.gabhall.com/events" target="_blank">Kentucky Derby Weekend — Great American Beer Hall</a></div>
+      <div class="la-sub">Featuring Ms Wensday at 4:30 PM and Beachnights at 9 PM on Saturday · gabhall.com</div>
+    </div>
+  </div>
+  <div class="la-row">
+    <div class="la-date">May 13</div>
+    <div>
+      <div class="la-text"><a href="https://www.medfordma.org/about/news/details/~board/city-news/post/cdbg-program-annual-action-plan-public-comment-period" target="_blank">CDBG Public Comment Deadline</a></div>
+      <div class="la-sub">Last day to weigh in on $1.47M in federal community funds · Email ocd@medford-ma.gov</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div>
+    <div class="f-brand">Medford Mercury</div>
+    <div class="f-tag">Sunday Edition · April 19, 2026</div>
+    <p style="margin-top: 14px; font-size: 13px; line-height: 1.7; color: #444;">Your daily guide to Medford, Massachusetts. Published Monday–Friday plus Sunday. We aggregate public sources, summarize in original language, and always link back.</p>
+    <a href="#" class="f-cta">Subscribe Free →</a>
+    <div class="prev-ed" style="margin-top: 14px;">← <a href="/2026-04-17">Friday's Edition · April 17</a></div>
+  </div>
+  <div>
+    <h4>Sources Today</h4>
+    <p>City of Medford · medfordma.org<br>
+    Gotta Know Medford · gottaknowmedford.com<br>
+    Deep Cuts · deepcuts.rocks<br>
+    Medford Brewing Co. · medfordbrew.com<br>
+    Great American Beer Hall · gabhall.com<br>
+    Medford Police Dept · medfordpolice.com<br>
+    Medford Public Schools · mps02155.org</p>
+  </div>
+  <div>
+    <h4>Publishing Standards</h4>
+    <p>All summaries in original language. Facts verified at source. No copied text. No rumors. Errors corrected within one edition.</p>
+    <br>
+    <h4>Forward This</h4>
+    <p>Know a Medford neighbor who'd find this useful? Forward it — that's the whole idea.</p>
+  </div>
+</footer>
+
+</body>
+</html>

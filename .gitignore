@@ -1,0 +1,6 @@
+node_modules/
+.env
+*.env
+.edition-meta.json
+/tmp/
+.wrangler/
