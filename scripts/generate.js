@@ -186,32 +186,31 @@ ${aroundTownHTML}`
   <span><a href="/archive" style="color:inherit;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color 0.18s;" onmouseover="this.style.borderBottomColor='#c84b2f'" onmouseout="this.style.borderBottomColor='transparent'">Past Issues</a></span>
 </div>`;
 
-  // Build footer
+  // Build footer (matches Apr 14 standard template)
   const footer = `<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="fb-name">Medford Mercury</div>
-      <div class="fb-tag">Morning Edition &middot; ${date.pretty} &middot; Vol. I No. ${editionNum}</div>
+  <div>
+    <div class="f-brand">Medford Mercury</div>
+    <div class="f-tag">Morning Edition · ${mastheadDate}</div>
+    <p style="margin-top: 16px; font-size: 13px; line-height: 1.7; color: #444;">Your daily guide to Medford, Massachusetts. We aggregate public sources, summarize in original language, and always link back. We do not copy articles. We correct errors quickly.</p>
+    <a href="#" class="f-cta">Subscribe Free &rarr;</a>
+    <div class="prev-edition" style="margin-top: 16px;">
+      &larr; <a href="/${yesterday}">Yesterday's Edition</a>
     </div>
-    <div class="footer-cols">
-      <div class="footer-col">
-        <div class="fc-head">Sources</div>
-        <p class="fc-body">City of Medford &middot; medfordma.org<br>
-        Gotta Know Medford &middot; gottaknowmedford.com<br>
-        Deep Cuts &middot; deepcuts.rocks<br>
-        Great American Beer Hall &middot; gabhall.com<br>
-        Medford Brewing Co. &middot; medfordbrew.com</p>
-      </div>
-      <div class="footer-col">
-        <div class="fc-head">About</div>
-        <p class="fc-body">Medford Mercury is your daily guide to Medford, Massachusetts. We summarize in original language, verify at source, and always link back. Published Monday&ndash;Saturday plus Sunday.</p>
-        <div style="margin-top: 14px;"><a href="/archive" class="footer-archive-link">Past Issues &rarr;</a></div>
-      </div>
-      <div class="footer-col">
-        <div class="fc-head">Standards</div>
-        <p class="fc-body">All content written in original language. No copied text from sources. Facts verified before publication. Corrections issued within one edition. No advertising. No sponsored content.</p>
-      </div>
-    </div>
+  </div>
+  <div>
+    <h4>Sources Today</h4>
+    <p>City of Medford &middot; medfordma.org<br>
+    Gotta Know Medford &middot; gottaknowmedford.com<br>
+    Deep Cuts &middot; deepcuts.rocks<br>
+    Great American Beer Hall &middot; gabhall.com<br>
+    Medford Brewing Co. &middot; medfordbrew.com</p>
+  </div>
+  <div>
+    <h4>Publishing Standards</h4>
+    <p>All summaries written in original language. Facts verified at source. No copied text. No rumors. No unverified accusations. Opinions clearly marked. Errors corrected within one edition.</p>
+    <br>
+    <h4>Forward This</h4>
+    <p>Know a Medford neighbor who'd find this useful? Forward it &mdash; that's the whole idea.</p>
   </div>
 </footer>`;
 
