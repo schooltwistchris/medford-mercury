@@ -114,20 +114,30 @@ async function writeHTML(date, yesterday, researchData, sharedCSS, aroundTownHTM
 
   const storiesJSON = JSON.stringify(researchData, null, 2);
 
+  // CSS is NOT sent in the prompt — injected post-generation to save ~3000 tokens
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: 6000,
-    system: `You are a magazine layout designer. Given research data and a CSS stylesheet, produce a complete HTML page for the Medford Mercury morning edition.
+    max_tokens: 8000,
+    system: `You are a magazine layout designer for the Medford Mercury, a daily local news magazine.
+Produce a complete HTML page using the spread CSS classes already defined in the stylesheet.
 
 RULES:
 - Output ONLY raw HTML starting with <!DOCTYPE html>. No markdown, no explanation.
-- Embed the provided CSS verbatim inside <style> tags — do not modify it
-- Each story gets its own <section> with a distinct background from the CSS variables
-- Rotate through these spread styles: cream/light hero, dark midnight, rose/alert, terminal green-on-black, parchment academic, dark stat
-- Lead story gets a "Why it matters" callout box
-- Nav bar items are anchor <a href="#section-id"> links
+- Use <link rel="stylesheet" href="/magazine.css"> in the <head> — do NOT write any <style> tags
+- Use Google Fonts in <head>: <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+- Each story gets its own <section> using these exact spread classes: spread-hero, spread-midnight, spread-alert, spread-terminal, spread-academic, spread-stat
+- Lead story uses spread-hero with: .kicker, .headline, .dek, .body-para, .why callout div
+- spread-midnight has two child divs separated by <div class="divider"></div>
+- spread-alert uses .alert-stamp and .timeline with .t-event/.t-date rows
+- spread-terminal uses .sys-header, .t-headline, .t-body, .zone-cell
+- spread-stat uses .stat-number, .stat-label, .race-row, .race-detail
+- spread-events uses .event-card, .ev-time, .ev-title
+- Masthead: <header class="masthead"> with .masthead-left, .masthead-title (.name + .tagline), .masthead-right
+- Below masthead: <div class="masthead-rule"> then <div class="masthead-sub"> with .nav-links anchors
+- Lead story gets a "Why it matters" dark callout box: <div class="why">...</div>
+- Nav bar: <a href="#section-id"> links for each section
+- Footer: class="footer" with .footer-inner, .footer-brand (.fb-name + .fb-tag), .footer-cols with 3x .footer-col
 - Footer links to yesterday: /${yesterday}
-- Mobile-first: CSS already handles it
 - Vol. I No. [N] — calculate N as weekdays since April 14 2026`,
     messages: [{
       role: "user",
@@ -135,15 +145,10 @@ RULES:
 Slug: ${date.slug}
 Yesterday: /${yesterday}
 
-CSS to embed verbatim:
-<style>
-${sharedCSS}
-</style>
-
 Research data:
 ${storiesJSON}
 
-Write the complete HTML edition now.
+Write the complete HTML edition now. Use the CSS classes exactly as documented.
 
 After the main stories and before the Today in Medford events section, insert this pre-built Around Town block exactly as-is (do not modify it):
 ${aroundTownHTML}`
@@ -152,6 +157,17 @@ ${aroundTownHTML}`
 
   let html = response.content.filter(b => b.type === "text").map(b => b.text).join("");
   html = html.replace(/^```html\s*/i, "").replace(/\s*```\s*$/, "").trim();
+
+  // Inject the real CSS inline, replacing the placeholder link tag
+  html = html.replace(
+    /<link[^>]+href=["']\/magazine\.css["'][^>]*>/i,
+    `<style>\n${sharedCSS}\n</style>`
+  );
+
+  // Fallback: if no <style> tag ended up in the doc, inject before </head>
+  if (!html.includes("<style>")) {
+    html = html.replace("</head>", `<style>\n${sharedCSS}\n</style>\n</head>`);
+  }
 
   console.log(`  Tokens: ${response.usage.input_tokens} in / ${response.usage.output_tokens} out`);
   return { html, usage: response.usage };
