@@ -154,8 +154,9 @@ ${aroundTownHTML}`
   let sections = response.content.filter(b => b.type === "text").map(b => b.text).join("");
   sections = sections.replace(/^```html\s*/i, "").replace(/\s*```\s*$/, "").trim();
   // Strip any accidental full-doc wrapper the model may have added
+  if (/<body/i.test(sections)) {
   sections = sections.replace(/^[\s\S]*?<body[^>]*>/i, "").replace(/<\/body>[\s\S]*$/i, "").trim();
-
+}
   // Calculate edition number (weekdays since Apr 14 2026 + Sundays)
   const startDate = new Date("2026-04-14T00:00:00Z");
   const thisDate = new Date(date.slug + "T00:00:00Z");
