@@ -114,44 +114,127 @@ async function writeHTML(date, yesterday, researchData, sharedCSS, aroundTownHTM
 
   const storiesJSON = JSON.stringify(researchData, null, 2);
 
+  // CSS is NOT sent in the prompt — injected post-generation to save ~3000 tokens
   const response = await client.messages.create({
     model: MODEL,
-    max_tokens: 6000,
-    system: `You are a magazine layout designer. Given research data and a CSS stylesheet, produce a complete HTML page for the Medford Mercury morning edition.
+    max_tokens: 8000,
+    system: `You are a magazine layout designer for the Medford Mercury, a daily local news magazine.
+Output ONLY the story sections — the masthead and footer are added separately.
 
 RULES:
-- Output ONLY raw HTML starting with <!DOCTYPE html>. No markdown, no explanation.
-- Embed the provided CSS verbatim inside <style> tags — do not modify it
-- Each story gets its own <section> with a distinct background from the CSS variables
-- Rotate through these spread styles: cream/light hero, dark midnight, rose/alert, terminal green-on-black, parchment academic, dark stat
-- Lead story gets a "Why it matters" callout box
-- Nav bar items are anchor <a href="#section-id"> links
-- Footer links to yesterday: /${yesterday}
-- Mobile-first: CSS already handles it
-- Vol. I No. [N] — calculate N as weekdays since April 14 2026`,
+- Output ONLY the <body> content between the masthead and footer — do NOT output <!DOCTYPE>, <html>, <head>, or <body> tags
+- Do NOT write any masthead, header, nav, or footer — those are injected automatically
+- Do NOT write any <style> tags or <link> tags
+- Each story gets its own <section> using these exact spread classes: spread-hero, spread-midnight, spread-alert, spread-terminal, spread-academic, spread-stat
+- Lead story uses spread-hero with: .kicker, .headline, .dek, .body-para, and <div class="why"> callout
+- spread-midnight has two child divs separated by <div class="divider"></div>
+- spread-alert uses .alert-stamp and .timeline with .t-event/.t-date rows
+- spread-terminal uses .sys-header, .t-headline, .t-body, .zone-cell
+- spread-stat uses .stat-number, .stat-label, .race-row, .race-detail
+- spread-events uses .event-card, .ev-time, .ev-title
+- Lead story gets a "Why it matters" dark callout box: <div class="why">...</div>
+- Each section should have an id like id="section-topic" for nav linking
+- Output ONLY the sections, nothing else`,
     messages: [{
       role: "user",
       content: `Date: ${date.pretty}
 Slug: ${date.slug}
 Yesterday: /${yesterday}
 
-CSS to embed verbatim:
-<style>
-${sharedCSS}
-</style>
-
 Research data:
 ${storiesJSON}
 
-Write the complete HTML edition now.
+Write the complete HTML edition now. Use the CSS classes exactly as documented.
 
 After the main stories and before the Today in Medford events section, insert this pre-built Around Town block exactly as-is (do not modify it):
 ${aroundTownHTML}`
     }],
   });
 
-  let html = response.content.filter(b => b.type === "text").map(b => b.text).join("");
-  html = html.replace(/^```html\s*/i, "").replace(/\s*```\s*$/, "").trim();
+  let sections = response.content.filter(b => b.type === "text").map(b => b.text).join("");
+  sections = sections.replace(/^```html\s*/i, "").replace(/\s*```\s*$/, "").trim();
+  // Strip any accidental full-doc wrapper the model may have added
+  sections = sections.replace(/^[\s\S]*?<body[^>]*>/i, "").replace(/<\/body>[\s\S]*$/i, "").trim();
+
+  // Calculate edition number (weekdays since Apr 14 2026 + Sundays)
+  const startDate = new Date("2026-04-14T00:00:00Z");
+  const thisDate = new Date(date.slug + "T00:00:00Z");
+  const daysDiff = Math.round((thisDate - startDate) / 86400000);
+  const editionNum = daysDiff + 1;
+
+  // Build masthead with correct branding
+  const mastheadDate = new Date(date.slug + "T12:00:00").toLocaleDateString("en-US", {
+    timeZone: "UTC", month: "long", day: "numeric", year: "numeric"
+  });
+  const masthead = `<header class="masthead">
+  <div class="masthead-left">Medford, Massachusetts<br>Est. 2026 &middot; Free to Read</div>
+  <div class="masthead-title">
+    <div class="name">Medford Mercury</div>
+    <div class="tagline">The Smartest Way to Keep Up with Medford</div>
+  </div>
+  <div class="masthead-right">Morning Edition<br>${mastheadDate}</div>
+</header>
+<div class="masthead-rule"></div>
+<div class="masthead-sub">
+  <span>Vol. I &middot; No. ${editionNum}</span>
+  <span class="nav-links">
+    <a href="#section-community">Community</a><span class="nav-dot">&middot;</span>
+    <a href="#section-politics">Politics</a><span class="nav-dot">&middot;</span>
+    <a href="#section-environment">Environment</a><span class="nav-dot">&middot;</span>
+    <a href="#section-events">Events</a>
+  </span>
+  <span><a href="/archive" style="color:inherit;text-decoration:none;border-bottom:1.5px solid transparent;transition:border-color 0.18s;" onmouseover="this.style.borderBottomColor='#c84b2f'" onmouseout="this.style.borderBottomColor='transparent'">Past Issues</a></span>
+</div>`;
+
+  // Build footer
+  const footer = `<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="fb-name">Medford Mercury</div>
+      <div class="fb-tag">Morning Edition &middot; ${date.pretty} &middot; Vol. I No. ${editionNum}</div>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="fc-head">Sources</div>
+        <p class="fc-body">City of Medford &middot; medfordma.org<br>
+        Gotta Know Medford &middot; gottaknowmedford.com<br>
+        Deep Cuts &middot; deepcuts.rocks<br>
+        Great American Beer Hall &middot; gabhall.com<br>
+        Medford Brewing Co. &middot; medfordbrew.com</p>
+      </div>
+      <div class="footer-col">
+        <div class="fc-head">About</div>
+        <p class="fc-body">Medford Mercury is your daily guide to Medford, Massachusetts. We summarize in original language, verify at source, and always link back. Published Monday&ndash;Saturday plus Sunday.</p>
+        <div style="margin-top: 14px;"><a href="/archive" class="footer-archive-link">Past Issues &rarr;</a></div>
+      </div>
+      <div class="footer-col">
+        <div class="fc-head">Standards</div>
+        <p class="fc-body">All content written in original language. No copied text from sources. Facts verified before publication. Corrections issued within one edition. No advertising. No sponsored content.</p>
+      </div>
+    </div>
+  </div>
+</footer>`;
+
+  // Assemble full HTML document
+  const html = \`<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medford Mercury &mdash; ${date.pretty}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+\${sharedCSS}
+</style>
+</head>
+<body>
+\${masthead}
+\${sections}
+\${footer}
+</body>
+</html>\`;
 
   console.log(`  Tokens: ${response.usage.input_tokens} in / ${response.usage.output_tokens} out`);
   return { html, usage: response.usage };
