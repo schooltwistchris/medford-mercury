@@ -215,6 +215,15 @@
     color: #333;
     margin-bottom: 28px;
   }
+  .spread-hero .body-para,
+  .spread-hero p:not(.kicker):not(.why p) {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: #222;
+    max-width: 680px;
+    margin-bottom: 18px;
+  }
   .spread-hero .byline {
     font-size: 11px;
     font-weight: 700;
@@ -313,6 +322,24 @@
     font-weight: 400;
     line-height: 1.5;
     color: #e0dbd0;
+  }
+
+  /* ── Bare <p> paragraph spacing for AI-generated content ── */
+  .spread-midnight p,
+  .spread-terminal p,
+  .spread-stat p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(232,228,218,0.82);
+    margin-bottom: 16px;
+    max-width: 600px;
+  }
+  .spread-midnight .body-para,
+  .spread-terminal .body-para {
+    font-size: 16px;
+    line-height: 1.65;
+    color: rgba(232,228,218,0.82);
+    margin-bottom: 16px;
   }
 
   /* 3 · ALERT — rose/red stamp treatment */
@@ -514,6 +541,7 @@
     margin-bottom: 20px;
     overflow: hidden;
   }
+  .spread-academic p,
   .spread-academic .body-para {
     font-size: 17px;
     line-height: 1.7;
