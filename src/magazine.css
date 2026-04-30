@@ -687,25 +687,42 @@
   }
 
   /* ─── FOOTER ─── */
+  /* ─── FOOTER (Apr 14 standard) ─── */
   .footer {
     background: var(--ink);
-    color: rgba(245,240,232,0.5);
+    color: var(--cream);
     padding: 48px 60px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
   }
-  .footer .f-brand {
+  .f-brand {
     font-family: 'Fraunces', serif;
-    font-size: 32px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: 800;
     color: var(--cream);
-    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
   }
-  .footer .f-tag {
-    font-size: 12px;
-    letter-spacing: 0.12em;
+  .f-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 16px;
+  }
+  .f-cta {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 2px solid var(--rust);
+    padding-bottom: 2px;
   }
   .footer h4 {
     font-size: 10px;
@@ -714,23 +731,70 @@
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 12px;
+    margin-top: 0;
   }
   .footer p {
     font-size: 13px;
-    line-height: 1.65;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.65);
+    margin-bottom: 12px;
   }
-  .footer .f-cta {
-    padding: 14px 24px;
-    background: var(--rust);
-    color: white;
+  .prev-edition {
+    margin-top: 16px;
     font-size: 12px;
+    color: rgba(245,240,232,0.5);
+  }
+  .prev-edition a {
+    color: rgba(245,240,232,0.5);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245,240,232,0.2);
+  }
+  /* New footer template classes (Apr 26+) — remap to Apr 14 style */
+  .footer-inner { display: contents; }
+  .footer-brand { grid-column: 1 / -1; }
+  .fb-name {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--cream);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .fb-tag {
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
+    color: rgba(245,240,232,0.5);
+    margin-bottom: 16px;
   }
+  .footer-cols { display: contents; }
+  .footer-col {}
+  .fc-head {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .fc-body {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(245,240,232,0.65);
+    margin-bottom: 12px;
+  }
+  .footer-archive-link {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    border-bottom: 2px solid var(--rust);
+    padding-bottom: 2px;
+  }
+
 
   /* ─── NAV LINKS ─── */
   .masthead-sub .nav-links {
@@ -1338,29 +1402,6 @@
     .spread-around-town { padding: 40px 20px; }
     .around-town-grid { grid-template-columns: 1fr; gap: 3px; }
   }
-
-  /* ─── NEW FOOTER TEMPLATE (fb-name / footer-cols) ─── */
-  .footer {
-    background: var(--ink);
-    color: var(--cream);
-  }
-  .footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-  }
-  .footer-brand { grid-column: 1 / -1; border-bottom: 1px solid rgba(245,240,232,0.15); padding-bottom: 24px; margin-bottom: 8px; }
-  .fb-name { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 800; color: var(--cream); letter-spacing: -0.02em; }
-  .fb-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.5); margin-top: 6px; }
-  .footer-cols { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
-  .footer-col {}
-  .fc-head { font-size: 10px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-  .fc-body { font-size: 13px; line-height: 1.7; color: rgba(245,240,232,0.65); }
-  .footer-archive-link { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rust); text-decoration: none; }
-
 
   /* ════════════════════════════════════════
      SUNDAY EDITION STYLES
