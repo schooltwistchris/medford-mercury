@@ -1338,3 +1338,111 @@
     .spread-around-town { padding: 40px 20px; }
     .around-town-grid { grid-template-columns: 1fr; gap: 3px; }
   }
+
+  /* ─── NEW FOOTER TEMPLATE (fb-name / footer-cols) ─── */
+  .footer {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-brand { grid-column: 1 / -1; border-bottom: 1px solid rgba(245,240,232,0.15); padding-bottom: 24px; margin-bottom: 8px; }
+  .fb-name { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 800; color: var(--cream); letter-spacing: -0.02em; }
+  .fb-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.5); margin-top: 6px; }
+  .footer-cols { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+  .footer-col {}
+  .fc-head { font-size: 10px; font-weight: 800; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .fc-body { font-size: 13px; line-height: 1.7; color: rgba(245,240,232,0.65); }
+  .footer-archive-link { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--rust); text-decoration: none; }
+
+
+  /* ════════════════════════════════════════
+     SUNDAY EDITION STYLES
+  ════════════════════════════════════════ */
+
+  .sunday-flag {
+    background: var(--ink); color: var(--cream);
+    text-align: center; padding: 7px 60px;
+    font-size: 10px; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase;
+    border-bottom: 3px solid var(--ink);
+  }
+  .today-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
+  .today-card { background: var(--cream); padding: 28px; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .today-card.hl { border-top-color: var(--rust); }
+  .today-card .tc-time { font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rust); margin-bottom: 8px; }
+  .today-card .tc-title { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 800; line-height: 1.15; color: var(--ink); margin-bottom: 8px; }
+  .today-card .tc-desc { font-size: 14px; line-height: 1.6; color: #444; }
+
+  .week-section { padding: 60px 60px 0; background: var(--cream); }
+  .week-section-header { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; line-height: 1; letter-spacing: -0.02em; border-bottom: 3px solid var(--ink); padding-bottom: 16px; margin-bottom: 40px; display: flex; align-items: baseline; gap: 20px; }
+  .week-section-header .wsh-sub { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #888; }
+
+  .day-block { margin-bottom: 36px; }
+  .day-label { font-size: 11px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); padding: 8px 0; border-bottom: 1px solid #ccc; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; }
+  .day-label .dl-date { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: none; color: #888; }
+  .ev-row { display: flex; align-items: flex-start; gap: 16px; padding: 11px 0; border-bottom: 1px solid #e8e4da; }
+  .ev-row:last-child { border-bottom: none; }
+  .ev-body { flex: 1; min-width: 0; }
+  .ev-title { font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--ink); }
+  .ev-title a { color: var(--rust); text-decoration: none; }
+  .ev-desc { font-size: 13px; color: #555; margin-top: 2px; line-height: 1.5; }
+  .ev-badges { display: inline-flex; gap: 5px; margin-left: 8px; vertical-align: middle; }
+  .badge { font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 7px; border-radius: 999px; }
+  .badge-free { background: #e4f2e4; color: #2a6b2a; }
+  .badge-kids { background: #deeaf8; color: #1a4e8a; }
+  .badge-reg  { background: #fdf0d8; color: #7a4a00; }
+
+  .venues-section { padding: 60px; background: var(--parchment); border-top: 3px solid var(--ink); }
+  .venues-header { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 900; line-height: 1; letter-spacing: -0.02em; border-bottom: 2px solid var(--ink); padding-bottom: 14px; margin-bottom: 28px; }
+  .venues-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+  .vc { overflow: hidden; }
+  .vc-head { padding: 16px 18px 14px; display: flex; justify-content: space-between; align-items: flex-start; }
+  .vc-head-inner { display: flex; gap: 10px; align-items: center; }
+  .vc-name { font-size: 15px; font-weight: 700; line-height: 1.2; }
+  .vc-sub { font-size: 11px; margin-top: 2px; opacity: 0.6; }
+  .vc-link { font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; padding: 4px 10px; text-decoration: none; flex-shrink: 0; }
+  .vc-body { background: white; border: 1px solid #e0dbd0; border-top: none; }
+  .vc-row { display: flex; gap: 8px; padding: 8px 14px; border-bottom: 1px solid #f0ece4; align-items: baseline; }
+  .vc-row:last-child { border-bottom: none; }
+  .vc-day { font-size: 11px; color: #888; min-width: 26px; flex-shrink: 0; font-weight: 600; }
+  .vc-evt { font-size: 13px; color: var(--ink); flex: 1; min-width: 0; line-height: 1.4; }
+  .vc-evt a { color: var(--rust); text-decoration: none; }
+  .vc-price { font-size: 11px; color: #888; white-space: nowrap; }
+  .vc-hours { padding: 7px 14px; font-size: 11px; color: #888; background: #faf8f3; border-top: 1px solid #e8e4da; }
+  .dc .vc-head { background: #000; }
+  .dc .vc-name { color: #F7FE3A; }
+  .dc .vc-sub { color: rgba(255,255,255,0.65); }
+  .dc .vc-link { background: #F7FE3A; color: #000; }
+  .mb .vc-head { background: #141827; }
+  .mb .vc-name { color: #fff; }
+  .mb .vc-sub { color: rgba(255,255,255,0.6); }
+  .mb .vc-link { background: #3346FF; color: #fff; }
+  .gabh .vc-head { background: #022E62; }
+  .gabh .vc-name { color: #fff; }
+  .gabh .vc-sub { color: rgba(255,255,255,0.6); }
+  .gabh .vc-link { background: #B21832; color: #fff; }
+
+  .look-ahead-section { background: var(--ink); color: var(--cream); padding: 60px; }
+  .la-header { font-family: 'Fraunces', serif; font-size: 48px; font-weight: 900; color: var(--cream); border-bottom: 2px solid rgba(245,240,232,0.2); padding-bottom: 14px; margin-bottom: 28px; display: flex; align-items: baseline; gap: 20px; }
+  .la-header span { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .la-row { display: flex; gap: 20px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.1); }
+  .la-row:last-child { border-bottom: none; }
+  .la-date { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--gold); min-width: 60px; flex-shrink: 0; padding-top: 2px; }
+  .la-text { font-size: 15px; font-weight: 500; color: var(--cream); line-height: 1.35; }
+  .la-text a { color: var(--gold); text-decoration: none; }
+  .la-sub { font-size: 13px; color: rgba(245,240,232,0.55); margin-top: 3px; line-height: 1.5; }
+
+  @media (max-width: 768px) {
+    .sunday-flag { padding: 7px 20px; }
+    .today-grid, .venues-grid { grid-template-columns: 1fr; }
+    .week-section, .venues-section, .look-ahead-section { padding: 40px 20px; }
+    .footer-inner { padding: 40px 20px; grid-template-columns: 1fr; }
+    .footer-cols { grid-template-columns: 1fr; }
+  }
+
