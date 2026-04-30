@@ -217,7 +217,7 @@ ${aroundTownHTML}`
 </footer>`;
 
   // Assemble full HTML document
-  const html = \`<!DOCTYPE html>
+  const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -235,7 +235,7 @@ ${aroundTownHTML}`
 \${sections}
 \${footer}
 </body>
-</html>\`;
+</html>`;
 
   console.log(`  Tokens: ${response.usage.input_tokens} in / ${response.usage.output_tokens} out`);
   return { html, usage: response.usage };
