@@ -1236,116 +1236,6 @@
     font-size: 13px; line-height: 1.6; color: rgba(245,240,232,0.55);
   }
 
-  /* ─── FOOTER ─── */
-  .footer {
-    background: var(--cream);
-    border-top: 3px solid var(--ink);
-    padding: 48px 60px;
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 40px;
-  }
-  .footer .f-brand {
-    font-family: 'Fraunces', serif; font-size: 32px;
-    font-weight: 900; color: var(--ink); margin-bottom: 8px;
-  }
-  .footer .f-tag {
-    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
-    text-transform: uppercase; color: #888;
-  }
-  .footer h4 {
-    font-size: 10px; font-weight: 800; letter-spacing: 0.25em;
-    text-transform: uppercase; color: var(--rust); margin-bottom: 12px;
-  }
-  .footer p { font-size: 13px; line-height: 1.7; color: #444; }
-  .footer a.f-cta {
-    display: inline-block; margin-top: 20px;
-    padding: 14px 24px; background: var(--rust); color: white;
-    font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
-    text-transform: uppercase; text-decoration: none;
-  }
-  .prev-edition {
-    font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
-    text-transform: uppercase; margin-top: 12px;
-  }
-  .prev-edition a { color: var(--rust); text-decoration: none; }
-  .prev-edition a:hover { text-decoration: underline; }
-
-  @media (max-width: 768px) {
-
-    /* ── Masthead ── */
-    .masthead {
-      grid-template-columns: 1fr;
-      padding: 28px 20px 18px;
-      text-align: center;
-      gap: 8px;
-    }
-    .masthead-left, .masthead-right { display: none; }
-    .masthead-title .name { font-size: clamp(44px, 12vw, 68px); }
-    .masthead-rule { margin: 0; }
-    .masthead-sub {
-      margin: 0;
-      padding: 8px 20px;
-      flex-wrap: wrap;
-      gap: 6px;
-      justify-content: center;
-    }
-    .masthead-sub .nav-links {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 6px;
-    }
-    .masthead-sub > span:first-child,
-    .masthead-sub > span:last-child { display: none; }
-
-    /* ── Hero / Patriots ── */
-    .spread-patriots { padding: 48px 20px 40px; }
-    .spread-patriots::before { display: none; }
-    .spread-patriots .headline { font-size: clamp(38px, 10vw, 56px); }
-    .spread-patriots .dek { font-size: 17px; }
-    .spread-patriots .schedule { grid-template-columns: 1fr; gap: 3px; }
-
-    /* ── School spread ── */
-    .spread-school { grid-template-columns: 1fr; padding: 48px 20px; gap: 36px; }
-    .spread-school .big-num { display: none; }
-    .spread-school .headline { font-size: clamp(30px, 8vw, 44px); }
-    .spread-school .dek { font-size: 16px; }
-    .spread-school .sidebar {
-      border-left: none; border-top: 3px solid var(--ink);
-      padding-left: 0; padding-top: 24px;
-    }
-
-    /* ── Housing spread ── */
-    .spread-housing { padding: 48px 20px; }
-    .spread-housing .inner { grid-template-columns: 1fr; gap: 36px; }
-    .spread-housing .big-num { display: none; }
-    .spread-housing .headline { font-size: clamp(30px, 8vw, 44px); }
-    .spread-housing .dek { font-size: 16px; }
-
-    /* ── Blueprint spread ── */
-    .spread-blueprint { padding: 48px 20px; }
-    .spread-blueprint .bp-header { font-size: 9px; }
-    .spread-blueprint .inner { grid-template-columns: 1fr; gap: 32px; }
-    .spread-blueprint .headline { font-size: clamp(28px, 7vw, 40px); }
-    .spread-blueprint .dek { font-size: 15px; }
-
-    /* ── Briefs ── */
-    .spread-briefs { padding: 48px 20px; }
-    .briefs-header { font-size: 38px; margin-bottom: 32px; }
-    .briefs-grid { grid-template-columns: 1fr; gap: 0; }
-    .brief-item { padding: 28px 0; border-bottom: 1px solid #ccc; }
-    .brief-item:first-child { padding-top: 0; }
-    .brief-item:last-child { border-bottom: none; }
-
-    /* ── Events ── */
-    .spread-events { padding: 40px 20px; }
-    .events-header { flex-direction: column; gap: 4px; margin-bottom: 24px; }
-    .events-header h2 { font-size: 38px; }
-    .events-grid { grid-template-columns: 1fr; gap: 3px; }
-
-    /* ── Footer ── */
-    .footer { grid-template-columns: 1fr; padding: 36px 20px; gap: 32px; }
-    .footer .f-brand { font-size: 26px; }
-  }
-
   /* ─── AROUND TOWN RECURRING EVENTS ─── */
   .spread-around-town {
     background: var(--spread-around);
@@ -1486,4 +1376,15 @@
     .footer-inner { padding: 40px 20px; grid-template-columns: 1fr; }
     .footer-cols { grid-template-columns: 1fr; }
   }
+
+
+  /* ─── TODAY SECTION WRAPPER ─── */
+  .today-section {
+    background: var(--cream);
+    border-bottom: 3px solid var(--ink);
+  }
+
+  /* ─── VENUE CARD IMAGE SAFETY ─── */
+  .vc-head img { display: none; }  /* hide any AI-added logos — text names only */
+  .vc-head-inner img { display: none; }
 
